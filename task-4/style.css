@@ -1,0 +1,62 @@
+/* @font-face {
+    font-family: 'Gilroy';
+    src: url(Gilroy.ttf);
+} */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    /* font-family: 'Gilroy'; */
+    overflow: hidden;
+}
+
+
+
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    position: relative;
+    /* z-index: 999; */
+}
+
+
+.elem{
+    height: 150px;
+    width: 100%;
+    border-bottom: 3px solid #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+
+.elem h1{
+    color: #fff;
+    font-size: 6vw;
+    position: relative;
+    z-index: 9;
+    mix-blend-mode: difference;
+}
+
+
+img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    position: absolute;
+    /* z-index: -1; */
+    /* transform: translate(-50%,-50%); */
+    opacity: 0;
+    transition: all 0.3s linear;
+}

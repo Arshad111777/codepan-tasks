@@ -1,0 +1,85 @@
+@font-face {
+    font-family:'Gilroy';
+    src: url(./Gilroy.otf);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+}
+
+
+html,body{
+    height: 100%;
+    width: 100%;
+}   
+
+body{
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card{
+    width: 20rem;
+    height: 25rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+#card img{
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    clip-path: circle();
+}
+
+
+#card h1{
+    margin: 10px 0;
+}
+
+
+#card h5{
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: palevioletred;
+}
+
+button.active_btn{
+    background-color: #dddd;
+    color:#212121;
+}
+
+#card button{
+    margin: 20px 5px;
+}
+
+#card button{
+    border: 1px solid transparent;
+    padding: 1rem 1.3rem;
+    background-color: cadetblue;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+}
+
+
+
+
+.btn-wrapper #remove{
+    background-color: #dddd;
+    color:#212121;
+}
+
+
