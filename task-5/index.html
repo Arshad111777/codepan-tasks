@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>new-task</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body{
+			background: #212121;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.wrapper{
+			width: 100%;
+			height: 100vh;
+			padding: 1rem;
+			display: flex;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+		}
+
+		.card{
+			width:15rem;
+			height: 3rem;
+			transition: all 0.4s ease;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color:#f9f9f9;
+			font-size: 1.3rem;
+			margin-block:10px;
+			cursor: pointer;
+		}
+
+		.card:hover{
+			opacity: 0.3;
+		}
+
+		.result{
+			width:100%;
+			height: 100%;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease;
+			background:rgba(0, 0, 0, 0.8);
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1;
+
+		}
+
+		.result img{
+			width: 2rem;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="result">
+		<img src="./images/icon.png" alt="icon"/>
+	</div>
+	<h1 style="text-align: center;color:#fff;">Copy Color Code On Click</h1>
+	<div class="wrapper">
+
+	</div>
+
+
+<!-- JS -->
+<script type="text/javascript">
+
+	// Random Color Generator
+	function randomColor(){
+		let hex = "abcdef0123456789"
+		let color = "#"
+		for(let i = 1; i <= 6; i++){
+			color += hex[Math.floor(Math.random() * hex.length)]
+		}
+		return color;
+	}
+
+	let wrapper = document.querySelector(".wrapper")
+	for(let i = 0; i <= 19; i++){
+		let el = document.createElement("div")
+	el.setAttribute("class","card")
+	wrapper.append(el)
+	}
+
+	let cards = wrapper.querySelectorAll(".card")
+
+	setInterval(()=>{
+		cards.forEach((item)=>{
+		let color = randomColor()
+		item.style.backgroundColor = `${color}`;
+		item.innerHTML = color;
+		item.addEventListener("click",(e)=>{
+			let data = e.currentTarget.innerText
+			window.navigator.clipboard.writeText(data);
+			setTimeout(()=>{
+				document.querySelector('.result').style.visibility = 'visible'
+				document.querySelector('.result').style.opacity = 1
+			},100)
+		setTimeout(()=>{
+			document.querySelector('.result').style.visibility = 'hidden'
+				document.querySelector('.result').style.opacity = 1
+		},500)
+
+		})
+	})
+	},5000)
+
+
+</script>
+</body>
+</html>
